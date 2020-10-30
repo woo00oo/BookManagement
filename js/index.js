@@ -25,6 +25,8 @@ async function main(){
     render(books);
 
 }
+
+
 function bindLogoutButton(){
     const btnLogout = document.querySelector('#btn_logout');
     btnLogout.addEventListener('click',logout);
