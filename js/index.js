@@ -136,3 +136,17 @@ async function getBooks(token) {
       });
     });
   }
+
+  async function deleteBook(bookId) {
+    const token = getToken();
+    if (token === null) {
+      location.assign('/login');
+      return;
+    }
+    await axios.delete(`https://api.marktube.tv/v1/book/${bookId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return;
+  }  
